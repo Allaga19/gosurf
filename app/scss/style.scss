@@ -117,6 +117,26 @@
     }
   }
 }
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid $green;
+  position: absolute;
+  right: 21px;
+  top: 80px;
+  z-index: 5;
+  cursor: pointer;
+  &__line {
+    width: 30px;
+    height: 3px;
+    background-color: $green;
+    + .menu-btn__line{
+      margin-top: 5px;
+    }
+  }
+}
 .header__date {
   font-weight: 800;
   font-size: 72px;
