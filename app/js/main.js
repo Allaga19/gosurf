@@ -12,6 +12,12 @@ $(function(){
     slidesToShow: 4,
     slidesToScroll: 4,
     asNavFor: 'header__slider',      // Привязка к другому сладеру
+    responsive: [
+      {
+        breakpoint: 961,
+        settings: "unslick",
+      },
+    ]
   });
 
   $('.surf-slider').slick({
@@ -20,6 +26,34 @@ $(function(){
     prevArrow: '<img class="slider-arrows slider-arrows__left" src="img/arrows-left.svg" alt="">',
     nextArrow: '<img class="slider-arrows slider-arrows__right" src="img/arrows-right.svg" alt="">',
     asNavFor:'.slider-map',             // Привязка к другому сладеру
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+      },
+      {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        }
+      },
+    ]
   });
 
   // Slider map
@@ -28,7 +62,29 @@ $(function(){
     slidesToScroll: 1,
     arrows: false,
     asNavFor:'.surf-slider',           // Привязка к другому сладеру
-    focusOnSelect: true
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1103,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+      },
+    ]
   });
   // Travel-slider
   $('.travel__slider, .shop__slider').slick({ 
@@ -43,6 +99,7 @@ $(function(){
     fade: true,
     prevArrow: '<img class="slider-arrows slider-arrows__left" src="img/arrows-left.svg" alt="">',
     nextArrow: '<img class="slider-arrows slider-arrows__right" src="img/arrows-right.svg" alt="">',
+  
   });
 
   $('<div class="quantity-nav"><div class="quantity-button quantity-up"><img src="img/plus.svg" alt="plus"></div><div class="quantity-button quantity-down"><img src="img/minus.svg" alt="minus"></div></div>').insertAfter('.quantity input');
@@ -97,5 +154,8 @@ $(function(){
   $('.menu-btn').on('click', function(){
     $('.menu').toggleClass('active')
   });
+
+  // Активация WoW для анимашки
+  new WOW().init();
   
 });

@@ -232,9 +232,11 @@
   }
 }
 .surf-box {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  &__wrapper {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   &__inner {
     min-height: 750px;
     background: rgba(#1c2121, 0.85);
@@ -280,7 +282,7 @@
 }
 /*------------ Slider map -----------*/
 .slider-map {
-  max-width: 1200px;
+  max-width: 1250px;
   min-height: 635px;
   background-image: url(../img/world-map-dots.png);
   background-repeat: no-repeat;
@@ -289,6 +291,7 @@
   margin: 0 auto;
   .slick-list {
     min-height: 635px;
+    //overflow: visible;
   }
   .slick-current {
     .slider-dots__content {
@@ -349,6 +352,7 @@
   height: 23px;
   background-color: $green;
   border-radius: 50%;
+  box-shadow: 0px 0px 35px rgba(74, 246, 205, 0.837777);
 }
 .slider-dots__content {
   display: none;
@@ -357,6 +361,7 @@
   position: absolute;
   bottom: 35px;
   transform: translateX(-50%);
+  z-index: 1;
   &::before {
     content: "";
     position: absolute;
@@ -366,7 +371,7 @@
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     bottom: -21px;
-    left: calc(50% - 1px);
+    left: calc(50% - 0.5px);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
@@ -529,12 +534,10 @@
 }
 /*----------------- sleep --------------*/
 .sleep {
-  background-image: url(../img/travel-bg.png);
-  &.holder {
     background-image: url(../img/frangipani.png);
-  }
-  background-position: bottom right;
-  background-repeat: no-repeat;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    min-height: 220px;
   .slider-arrows {
     top: 225px;
     opacity: 0.5;
